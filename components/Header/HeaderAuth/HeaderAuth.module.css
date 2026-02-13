@@ -1,0 +1,47 @@
+.header-auth {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-login {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #121417;
+}
+.header-auth-svg {
+  display: flex;
+}
+.auth-svg {
+  display: flex;
+  stroke-width: 2px;
+  stroke: #f4c550;
+  fill: none;
+}
+.header-login-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.header-register-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 14px 39px;
+  width: 166px;
+  height: 48px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #fff;
+  background: #121417;
+  vertical-align: middle;
+  text-align: center;
+}

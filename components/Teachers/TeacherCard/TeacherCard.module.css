@@ -1,0 +1,215 @@
+.teacherCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  padding: 24px;
+  /* min-height: 328px; */
+  border-radius: 24px;
+  box-shadow: 0px 4px 20px rgb(0 0 0 / 30%);
+  margin-bottom: 32px;
+}
+
+.teacherAvatar {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatarBorder {
+  width: 120px;
+  height: 120px;
+  padding: 12px;
+  border-radius: 999px;
+  border: 3px solid #fbe9ba;
+}
+
+.teacherImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.avatarDot {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  background: #38cd3e;
+}
+
+.teacherContent {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.nameBlock {
+  min-width: 220px;
+  margin-bottom: 32px;
+}
+
+.label {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #8a8a89;
+}
+
+.name {
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 500;
+  color: #121417;
+}
+
+.statsRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #121417;
+  white-space: nowrap;
+}
+
+.withDivider {
+  border-left: 1px solid rgba(18, 20, 23, 0.2);
+}
+
+.bookIcon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentcolor;
+}
+
+.starIcon {
+  width: 16px;
+  height: 16px;
+  color: #ffc531;
+}
+
+.price {
+  color: #38cd3e;
+}
+
+.favoriteButton {
+  border: none;
+  background: transparent;
+  padding: 0 0 0 12px;
+  cursor: pointer;
+}
+
+.heartIcon {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: #121417;
+  transition:
+    fill 180ms ease,
+    stroke 180ms ease;
+}
+
+.heartIcon:hover {
+  stroke: #f44336;
+}
+
+.heartIconActive {
+  fill: #f44336;
+  stroke: #f44336;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.details p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #121417;
+}
+
+.details span {
+  color: #8a8a89;
+}
+
+.readMoreButton {
+  width: fit-content;
+  border: none;
+  border-bottom: 1px solid #121417;
+  background: transparent;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #121417;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.experience {
+  width: 968px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #121417;
+  margin-bottom: 32px;
+}
+
+.levelsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.levelItem {
+  border: 1px solid rgba(18, 20, 23, 0.2);
+  border-radius: 35px;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1.15;
+  font-weight: 500;
+  color: #121417;
+}
+
+.levelItemPrimary {
+  border-color: transparent;
+  background: #f4c550;
+}
+
+.bookButton {
+  width: fit-content;
+  border: none;
+  border-radius: 12px;
+  background: #f4c550;
+  padding: 16px 48px;
+  font-size: 18px;
+  line-height: 1.55;
+  font-weight: 700;
+  color: #121417;
+  cursor: pointer;
+  text-decoration: none;
+}

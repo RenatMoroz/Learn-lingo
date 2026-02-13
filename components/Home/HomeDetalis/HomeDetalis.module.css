@@ -1,0 +1,116 @@
+/* .home-detalis {
+  flex: 0 1 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 98px 64px;
+  border-radius: 30px;
+  width: 720px;
+  height: 530px;
+  background: #f8f8f8;
+} */
+
+.home-detalis {
+  flex: 0 0 720px; /* Запрещаем сжиматься и расширяться */
+  width: 720px;
+  height: 530px;
+  background: #f8f8f8;
+  border-radius: 30px;
+  padding: 98px 64px;
+  display: flex;
+  flex-direction: column;
+  /* Важно, чтобы padding не увеличивал размер */
+}
+
+/* .home-cont-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 64px;
+} */
+
+.home-cont-content {
+  flex-grow: 1; /* Этот блок займет всё место, отодвинув кнопку вниз */
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.home-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1.16667;
+  letter-spacing: -0.02em;
+  color: #121417;
+}
+
+/* .home-span {
+  border-radius: 8px;
+  width: 195px;
+  height: 40px;
+  font-style: italic;
+  font-weight: 400;
+  background: #fbe9ba;
+} */
+.home-span {
+  display: inline-block; /* Чтобы фон и скругления работали корректно */
+  padding: 0 4px;
+  font-style: italic;
+  font-weight: 400;
+  background: #fbe9ba;
+  border-radius: 8px;
+}
+
+/* .home-content {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.375;
+  letter-spacing: -0.02em;
+  color: #121417;
+  width: 471px;
+} */
+
+.home-content {
+  font-size: 16px;
+  line-height: 1.375;
+  color: #121417;
+  max-width: 471px; /* Ограничиваем ширину текста как в макете */
+}
+/* .home-link-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  width: 267px;
+  height: 60px;
+  text-decoration: none;
+  background: #f4c550;
+} */
+.home-link-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  width: 267px;
+  height: 60px;
+  background: #f4c550;
+  transition: background 0.3s;
+}
+
+.home-link-div:hover {
+  background: #ffdc86;
+}
+
+.home-link {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.55556;
+  text-decoration: none;
+  color: #121417;
+}
+
+.home-link:focus {
+  background: #ffdc86;
+}

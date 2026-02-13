@@ -1,0 +1,37 @@
+.home-stats {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 4px dashed #f4c550;
+  border-radius: 30px;
+  width: 100%;
+  min-height: 116px;
+  padding: 40px 123px;
+  list-style: none;
+}
+
+.items-list {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.item-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.14286;
+  letter-spacing: -0.02em;
+  color: #121417;
+}
+
+.item-content {
+  width: 96px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: rgba(18, 20, 23, 0.7);
+}
