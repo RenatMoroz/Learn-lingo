@@ -32,6 +32,7 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  border: none;
   border-radius: 12px;
   padding: 14px 39px;
   width: 166px;
@@ -44,4 +45,5 @@
   background: #121417;
   vertical-align: middle;
   text-align: center;
+  cursor: pointer;
 }

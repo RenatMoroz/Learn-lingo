@@ -5,6 +5,9 @@ import { useState } from 'react';
 import { Teacher } from '@/types/teacher';
 import Link from 'next/link';
 import { useFavoritesStore } from '@/store/favoritesStore';
+import ReviewList from '@/components/ReviewList/ReviewList';
+import { useAuthStore } from '@/store/authStore';
+import { useRouter } from 'next/navigation';
 
 interface TeacherProps {
   teacher: Teacher;
@@ -12,11 +15,22 @@ interface TeacherProps {
 
 const TeacherCard = ({ teacher }: TeacherProps) => {
   const [showMore, setShowMore] = useState(false);
+  const router = useRouter();
+  const user = useAuthStore((state) => state.user);
   const { favorites, toggleFavorite } = useFavoritesStore();
-  const isFavorite = favorites.includes(teacher._id);
+  const isFavorite = Boolean(user) && favorites.includes(teacher._id);
 
   const handleReadMore = () => {
     setShowMore((prev) => !prev);
+  };
+
+  const handleToggleFavorite = () => {
+    if (!user) {
+      router.push('/auth/login');
+      return;
+    }
+
+    toggleFavorite(teacher._id);
   };
 
   return (
@@ -83,7 +97,7 @@ const TeacherCard = ({ teacher }: TeacherProps) => {
               className={css['favoriteButton']}
               type="button"
               aria-pressed={isFavorite}
-              onClick={() => toggleFavorite(teacher._id)}
+              onClick={handleToggleFavorite}
             >
               <svg
                 className={`${css['heartIcon']} ${
@@ -113,6 +127,7 @@ const TeacherCard = ({ teacher }: TeacherProps) => {
         </button>
 
         {showMore && <p className={css['experience']}>{teacher.experience}</p>}
+        {showMore && <ReviewList id={teacher._id} />}
 
         <ul className={css['levelsList']}>
           {teacher.levels.map((level, index) => (
@@ -128,7 +143,7 @@ const TeacherCard = ({ teacher }: TeacherProps) => {
         </ul>
 
         {showMore && (
-          <Link className={css['bookButton']} href="/lesson">
+          <Link className={css['bookButton']} href={`/lesson/${teacher._id}`}>
             Book trial lesson
           </Link>
         )}

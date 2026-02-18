@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import css from './LessonModal.module.css';
 import { Teacher } from '@/types/teacher';
+
 interface TeacherProps {
   teacher: Teacher;
 }
@@ -18,7 +19,23 @@ const LessonModal = ({ teacher }: TeacherProps) => {
               specific needs.
             </p>
           </div>
-
+          <div className={css['teacher-img-block']}>
+            <Image
+              src={teacher.avatar_url}
+              alt={`${teacher.name} ${teacher.surname}`}
+              className={css['teacherImage']}
+              width={96}
+              height={96}
+              unoptimized
+              loader={({ src }) => src}
+            />
+            <div>
+              <h3 className={css['teacher']}>Your teacher</h3>
+              <p className={css['teacher-name']}>
+                {teacher.name} {teacher.surname}
+              </p>
+            </div>
+          </div>
           <div className={css['radio-section']}>
             <h3 className={css['radio-title']}>
               What is your main reason for learning English?
@@ -46,7 +63,6 @@ const LessonModal = ({ teacher }: TeacherProps) => {
               ))}
             </ul>
           </div>
-
           <div className={css['inputs-wrapper']}>
             <input
               className={css['input']}
@@ -70,7 +86,6 @@ const LessonModal = ({ teacher }: TeacherProps) => {
               required
             />
           </div>
-
           <button className={css['submit-btn']} type="submit">
             Book
           </button>

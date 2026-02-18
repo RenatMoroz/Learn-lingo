@@ -1,0 +1,48 @@
+.reviewList {
+  display: flex;
+  flex-direction: column;
+}
+.reviewBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 44px;
+}
+.reviewItem {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+.reviewName {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #8a8a89;
+}
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #121417;
+  white-space: nowrap;
+  margin-bottom: 16px;
+}
+
+.starIcon {
+  width: 16px;
+  height: 16px;
+  color: #ffc531;
+}
+
+.reviewComment {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #121417;
+}

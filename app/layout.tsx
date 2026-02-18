@@ -6,6 +6,8 @@ import '../styles/globals.css';
 import Header from '@/components/Header/Header';
 import Container from '@/components/Container/Container';
 import TanstackProvider from '@/components/providers/TanstackProvider';
+import AuthInitializer from '@/components/AuthInitializer';
+import { Toaster } from 'react-hot-toast';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -39,10 +41,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${roboto.className}`}
       >
         <TanstackProvider>
-          <Container>
-            <Header />
-            {children}
-          </Container>
+          <AuthInitializer>
+            <Container>
+              <Header />
+              {children}
+              <Toaster position="top-right" />
+            </Container>
+          </AuthInitializer>
         </TanstackProvider>
       </body>
     </html>

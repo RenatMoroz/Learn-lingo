@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import css from './HeaderLogo.module.css';
 
 const HeaderLogo = () => {
@@ -8,7 +9,9 @@ const HeaderLogo = () => {
           <use href="/icons-sprite.svg#icon-ukraine"></use>
         </svg>
       </div>
-      <h4 className={css['header-title']}>LearnLingo</h4>
+      <Link href="/" className={css['header-title']}>
+        LearnLingo
+      </Link>
     </div>
   );
 };

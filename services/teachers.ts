@@ -1,4 +1,8 @@
-import { GetAllTeachersParams, GetTeachersResponse } from '@/types/teacher';
+import {
+  GetAllTeachersParams,
+  GetTeachersResponse,
+  Teacher,
+} from '@/types/teacher';
 import { nextApi } from './serverConfig';
 
 export async function getAllTeachers(params: GetAllTeachersParams) {
@@ -8,7 +12,15 @@ export async function getAllTeachers(params: GetAllTeachersParams) {
   return response.data;
 }
 
-export function getTeacherById() {}
+export async function getTeacherById(id: string) {
+  try {
+    const response = await nextApi.get<Teacher>(`/teachers/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching teacher by ID:', error);
+    throw error;
+  }
+}
 
 export function createTeacher() {}
 export function updateTeacherById() {}

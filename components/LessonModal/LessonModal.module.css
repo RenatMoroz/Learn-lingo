@@ -43,6 +43,35 @@
   font-size: 16px;
   line-height: 1.375;
   color: rgba(18, 20, 23, 0.8);
+  margin-bottom: 20px;
+}
+
+.teacher-img-block {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.teacherImage {
+  border-radius: 100px;
+  width: 44px;
+  height: 44px;
+}
+.teacher {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33333;
+  color: #8a8a89;
+  margin-bottom: 4px;
+}
+.teacher-name {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #121417;
 }
 
 .teacher-preview {
@@ -194,6 +223,7 @@
   cursor: pointer;
   border: none;
   transition: background 0.2s;
+  text-decoration: none;
 }
 
 .submit-btn:hover {
