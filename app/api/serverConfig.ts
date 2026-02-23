@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export const globalApi = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
+  baseURL: 'http://localhost:3001',
   withCredentials: true,
 });
