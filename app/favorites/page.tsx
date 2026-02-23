@@ -63,6 +63,8 @@ const FavoritesPage = () => {
     let isMounted = true;
 
     const loadFavorites = async () => {
+      console.log(favorites);
+
       if (favoriteIds.length === 0) {
         setTeachers([]);
         return;

@@ -2,15 +2,41 @@
 import Image from 'next/image';
 import css from './LessonModal.module.css';
 import { Teacher } from '@/types/teacher';
+import { sendLessonEmail } from '@/services/lessonModal';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 interface TeacherProps {
   teacher: Teacher;
 }
+
 const LessonModal = ({ teacher }: TeacherProps) => {
+  const router = useRouter();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+
+    const formData = new FormData(form);
+
+    try {
+      await sendLessonEmail({
+        FullName: formData.get('FullName') as string,
+        Email: formData.get('Email') as string,
+        PhoneNumber: formData.get('Phone') as string,
+      });
+
+      toast.success('Lesson successfully booked! 🎉');
+      form.reset();
+      router.push('/teachers');
+    } catch (error) {
+      toast.error('Something went wrong. Please try again.');
+      console.error(error);
+    }
+  };
   return (
     <div className={css['lesson-modal']}>
       <div className={css['lesson-content']}>
-        <form className={css['form']}>
+        <form className={css['form']} onSubmit={handleSubmit}>
           <div className={css['lesson-group']}>
             <h2 className={css['title']}>Book trial lesson</h2>
             <p className={css['description']}>

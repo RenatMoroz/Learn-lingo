@@ -27,6 +27,9 @@ export const POST = async (req: NextRequest) => {
         if (parsedCookie.refreshToken) {
           cookieStore.set('refreshToken', parsedCookie.refreshToken, options);
         }
+        if (parsedCookie.sessionId) {
+          cookieStore.set('sessionId', parsedCookie.sessionId, options);
+        }
       }
       return NextResponse.json(result.data);
     }
