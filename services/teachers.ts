@@ -6,10 +6,17 @@ import {
 import { nextApi } from './serverConfig';
 
 export async function getAllTeachers(params: GetAllTeachersParams) {
-  const response = await nextApi.get<GetTeachersResponse>('/teachers', {
-    params,
-  });
-  return response.data;
+  const response = await nextApi.get<Teacher[]>('/teachers', { params });
+
+  return {
+    teachers: response.data,
+    page: params.page || 1,
+    perPage: params.perPage || response.data.length,
+    totalPages: 1,
+    totalItems: response.data.length,
+    hasNextPage: false,
+    hasPreviousPage: false,
+  };
 }
 
 export async function getTeacherById(id: string) {
